@@ -1,0 +1,44 @@
+.order_summary img{
+  
+    width: 15%;
+    margin: auto 1rem;
+}
+
+
+.cart_container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid gray;
+
+    width: fit-content;
+    height: auto;
+    margin: 2rem 5rem;
+    box-shadow: 5px 5px 5px lightgray;
+    border-radius: 2px;
+    
+}
+
+
+.order_summary{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 2rem auto;
+
+}
+
+.grid{
+
+    display: grid;
+}
+
+.grid_two_column{
+
+    grid-template-columns: repeat(2,1fr);
+}
+

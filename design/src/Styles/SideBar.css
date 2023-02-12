@@ -1,0 +1,39 @@
+
+
+.sidebar_container{
+
+   height: 100vh;
+
+
+   border: 1px solid lightgray;
+
+ 
+
+   flex-basis: 14rem ;
+
+}
+
+
+
+@media (max-width:760px){
+
+   .sidebar_container{
+/* 
+      height: 30vh; */
+   
+   
+      border: 1px solid lightgray;
+   
+    
+    
+      flex-basis: 8rem ;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   
+   }
+
+
+
+
+}
