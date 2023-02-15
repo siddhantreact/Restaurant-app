@@ -8,7 +8,8 @@ var initialState = {
    t1: [],
    t2: [],
    t3: [],
-   selectedTable: []
+   selectedTable: [],
+   user:null
 
 
 
@@ -52,6 +53,13 @@ const data = createSlice({
          }
 
       }
+      ,
+
+      addUser(state ,action)
+      {
+      
+          state.user = action.payload
+      }
 
 
    }
@@ -64,6 +72,6 @@ const data = createSlice({
 
 
 
-export const { selectedTable, ordersOnTable } = data.actions;
+export const { selectedTable, ordersOnTable ,addUser } = data.actions;
 
 export default data.reducer

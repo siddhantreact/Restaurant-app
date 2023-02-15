@@ -28,13 +28,12 @@ function App() {
   const [cart ,setCart] = useState([])
 
  
-  const tables = ["t1" ,"t2" ,"t3"]
 
  
 
   return (
 
-    <ContextTransfer.Provider value={{ listData, setListData ,cart ,setCart ,tables}}>
+    <ContextTransfer.Provider value={{ listData, setListData ,cart ,setCart }}>
     
       <div className="App ">
 

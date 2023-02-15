@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import "../Styles/Login.css"
 
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,13 +11,16 @@ import { auth, provider } from "../Firebase/Firebase"
 import { signInWithPopup } from 'firebase/auth';
 import { useNavigate } from "react-router-dom"
 import { Autoplay } from "swiper"
-
+import { useDispatch } from 'react-redux';
+import { addUser } from '../Redux/Reducer';
 
 
 
 function Login() {
 
   const navigate = useNavigate()
+
+  const dispatch = useDispatch()
 
 
   function handlelogin() {
@@ -37,6 +40,15 @@ function Login() {
 
 
   
+
+  useEffect(()=>{
+
+      const user = auth.currentUser
+        
+      dispatch(addUser(user))
+
+       
+  },[])
 
 
 
