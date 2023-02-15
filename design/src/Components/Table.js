@@ -1,27 +1,34 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { clearTable } from '../Redux/Reducer'
 import "../Styles/Table.css"
 
 function Table() {
+  
+  const dispatch = useDispatch()
 
-  const t1Order = useSelector((state) => {
+  let t1Order = useSelector((state) => {
 
 
     return state.tables.t1
   })
 
-  const t2Order = useSelector((state) => {
+ let t2Order = useSelector((state) => {
 
 
     return state.tables.t2
   })
 
 
-  const t3Order = useSelector((state) => {
+  let t3Order = useSelector((state) => {
 
 
-    return state.tables.t3
+    return state.tables.t3 
   })
+
+
+
+  
 
 
   return (
@@ -32,7 +39,7 @@ function Table() {
 
 
       <div className='t1_container'>
- t1 table order
+        t1 table order
         {
 
 
@@ -43,6 +50,7 @@ function Table() {
               <>
                 <h3>title: {e.title}</h3>
                 <h3>price: {e.price}</h3>
+                <h3>quantity:{e.quantity}</h3>
               </>
             )
 
@@ -54,7 +62,7 @@ function Table() {
 
 
       <div className='t2_container'>
-      t2 table order
+        t2 table order
         {
 
 
@@ -65,6 +73,7 @@ function Table() {
               <>
                 <h3>title: {e.title}</h3>
                 <h3>price: {e.price}</h3>
+                <h3>quantity:{e.quantity}</h3>
               </>
             )
 
@@ -76,7 +85,7 @@ function Table() {
 
 
       <div className='t3_container'>
-      t3 table order
+        t3 table order
         {
 
 
@@ -87,6 +96,7 @@ function Table() {
               <>
                 <h3>title: {e.title}</h3>
                 <h3>price: {e.price}</h3>
+                <h3>quantity:{e.quantity}</h3>
               </>
             )
 
@@ -95,6 +105,19 @@ function Table() {
         }
 
       </div>
+
+
+
+/////!!!!!clearTable
+
+
+      <button onClick={() => {
+
+           dispatch(clearTable)
+
+           console.log("clicked")
+
+      }}>clear table</button>
 
 
     </div>

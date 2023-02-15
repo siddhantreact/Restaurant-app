@@ -2,12 +2,12 @@ import React, { useContext } from 'react'
 import "../Styles/Cards.css"
 import { ContextTransfer } from '../App'
 import Data from '../Data/Data'
-import { Add ,AddBox } from "@mui/icons-material"
+import { Add, AddBox, Minimize } from "@mui/icons-material"
 import { fontSize } from '@mui/system'
 import { IconButton } from '@mui/material'
 import { useDispatch } from 'react-redux'
 import { ordersOnTable } from '../Redux/Reducer'
-
+import { updateQuantity } from '../Redux/Reducer'
 
 
 function Cards() {
@@ -58,22 +58,33 @@ function Cards() {
                             </p>
 
 
-                        
 
 
-                                <IconButton onClick={() => {
-                                    setCart([...cart, e])
-                      
-                                    dispatch(ordersOnTable(e))
-                                     
 
-                                }}>
+                            <IconButton onClick={() => {
+                                setCart([...cart, e])
 
-                                    <AddBox />
+                                dispatch(ordersOnTable(e))
 
-                                </IconButton>
 
-                          
+                            }}>
+
+                                <AddBox />
+
+
+
+                            </IconButton>
+
+
+                            
+
+
+
+
+ 
+
+
+
 
                         </div>
                     )

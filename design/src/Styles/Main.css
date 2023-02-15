@@ -26,3 +26,11 @@
     outline: none;
     border: none;
 }
+
+.btn_1,.btn_2,.btn_3{
+ 
+    width: 3rem;
+    background-color: lightblue;
+
+
+}

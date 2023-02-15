@@ -6,7 +6,9 @@ import "../Styles/Cart.css"
 import { Delete } from "@mui/icons-material"
 import { IconButton } from '@mui/material'
 
-
+import { Add, Minimize, MinimizeSharp } from "@mui/icons-material"
+import { useDispatch, useSelector } from "react-redux"
+import { updateQuantity } from '../Redux/Reducer'
 
 
 function Cart() {
@@ -15,32 +17,83 @@ function Cart() {
 
   const navigate = useNavigate()
 
+  const dispatch = useDispatch()
+
+  // useEffect(() => {
+
+  //   const cartList = cart.map((e) => {
+
+  //     return e
+
+
+  //   })
+
+  //   const set = new Set(cartList)
+  //   const list = Array.from(set)
+
+
+
+  //   setCart(list)
+
+
+  //   // console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+
+
+
+  // }, [])
+
+  const t1 = useSelector((state) => {
+
+    return state.tables.t1
+
+  })
+
+  const t2 = useSelector((state) => {
+
+    return state.tables.t2
+
+  })
+
+  const t3 = useSelector((state) => {
+
+    return state.tables.t3
+
+  })
+
+
+       const selectedTable =  useSelector((state)=>{
+          return state.tables.selectedTable
+         })
+
+
+
 
 
   useEffect(() => {
 
-    const cartList = cart.map((e) => {
+    if(selectedTable[selectedTable.length-1]=="t1")
+    {
 
-      return e
+      setCart(t1)
+    }
 
+    else if(selectedTable[selectedTable.length-1]=="t2")
+    {
+      setCart(t2)
 
-    })
+    }
 
-    const set = new Set(cartList)
-    const list = Array.from(set)
+    else{
 
-
-
-    setCart(list)
-
-
-    // console.log(process.env.REACT_APP_GOOGLE_API_KEY)
-
-
-
-  }, [])
+      setCart(t3)
+    }
 
 
+  }, [selectedTable,t1,t2,t3])
+
+
+
+//!!! 3 tables
 
 
 
@@ -54,7 +107,7 @@ function Cart() {
 
         {
 
-          cart.map(({ id, title, category, price, img, desc }) => {
+          cart.map(({ id, title, category, price, img, desc,  quantity }) => {
 
             return (
 
@@ -79,19 +132,7 @@ function Cart() {
 
                 </p>
 
-                {/* <button onClick={() => {
-
-                  const list = cart.filter((e) => {
-
-                    return e.id !== id
-
-                  })
-
-                  setCart(list)
-
-
-
-                }}>delete</button> */}
+           
 
 
                 <IconButton onClick={() => {
@@ -108,6 +149,27 @@ function Cart() {
                   <Delete />
 
                 </IconButton>
+
+
+
+                <div className='quantity_container'>
+
+                  <IconButton   onClick={()=>{
+
+                    dispatch(updateQuantity(title))
+
+                  }}>
+                    <Add />
+                  </IconButton>
+
+                  <input value={ quantity} />
+
+                  <IconButton>
+                    <MinimizeSharp />
+                  </IconButton>
+
+                </div>
+
 
               </div>
 

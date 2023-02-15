@@ -39,14 +39,13 @@ function Home() {
 
 
 
-{/* 
 
                 <IconButton onClick={() => {
                     navigate("/cart")
                 }}>
                     <ShoppingBasketSharp />
                     <h5>{cart.length}</h5>
-                </IconButton> */}
+                </IconButton>
 
 
 

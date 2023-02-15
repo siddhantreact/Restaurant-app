@@ -42,3 +42,12 @@
     grid-template-columns: repeat(2,1fr);
 }
 
+.quantity_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quantity_container>input{
+    width: 2rem;
+}

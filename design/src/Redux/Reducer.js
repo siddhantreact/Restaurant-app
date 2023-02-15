@@ -9,7 +9,8 @@ var initialState = {
    t2: [],
    t3: [],
    selectedTable: [],
-   user:null
+   user:null,
+   cart:[]
 
 
 
@@ -60,7 +61,76 @@ const data = createSlice({
       
           state.user = action.payload
       }
+       ,
 
+      updateQuantity(state ,action)
+      {
+           
+       
+
+
+         //update acc to table
+
+        
+         if(state.selectedTable[state.selectedTable.length-1]=="t1"){
+
+            const itemIndex = state.t1.findIndex((e)=>{
+
+               return e.title == action.payload
+             })
+     
+           
+             
+           
+             
+     
+            console.log( state.t1[itemIndex].quantity++)
+         }
+         
+         else if(state.selectedTable[state.selectedTable.length-1]=="t2")
+         {
+
+
+            const itemIndex = state.t2.findIndex((e)=>{
+
+               return e.title == action.payload
+             })
+     
+           
+             
+           
+             
+     
+            console.log( state.t2[itemIndex].quantity++)
+         }
+
+         else{
+
+            const itemIndex = state.t3.findIndex((e)=>{
+
+               return e.title == action.payload
+             })
+     
+           
+             
+           
+             
+     
+            console.log( state.t3[itemIndex].quantity++)
+         }
+      
+      },
+
+
+
+      clearTable(state,action)
+      {
+
+         state.t1.length=0
+         state.t2.length=0
+         state.t3.length=0
+
+      }
 
    }
 
@@ -72,6 +142,6 @@ const data = createSlice({
 
 
 
-export const { selectedTable, ordersOnTable ,addUser } = data.actions;
+export const { selectedTable, ordersOnTable ,addUser ,updateQuantity,clearTable } = data.actions;
 
 export default data.reducer

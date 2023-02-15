@@ -64,17 +64,18 @@ function Main() {
 
       {/* ==============================================> */}
 
+   {/* !!!! persist */}
 
-  {/* !!disabling occupied tables */}
    
 
 
 
-      <button className='btn_1 btn' onClick={() => {
+      <button className='btn_1 ' onClick={() => {
 
         const btn = document.querySelector(".btn_1")
-
-
+       
+        btn.setAttribute("disabled" , true)
+       
         dispatch(selectedTable(btn.innerHTML))
 
       }}>
@@ -84,9 +85,12 @@ function Main() {
       </button>
 
 
-      <button className='btn_2 btn' onClick={() => {
+      <button className='btn_2 '  onClick={() => {
 
         const btn = document.querySelector(".btn_2")
+
+        btn.setAttribute("disabled" , true)
+
         dispatch(selectedTable(btn.innerHTML))
 
       }}>
@@ -94,9 +98,12 @@ function Main() {
       </button>
 
 
-      <button className='btn_3 btn' onClick={() => {
+      <button className='btn_3 ' onClick={() => {
 
         const btn = document.querySelector(".btn_3")
+
+        btn.setAttribute("disabled" , true)
+
         dispatch(selectedTable(btn.innerHTML))
 
       }}>

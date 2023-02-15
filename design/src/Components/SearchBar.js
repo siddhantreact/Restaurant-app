@@ -119,8 +119,8 @@ function SearchBar() {
 
             } />
 
-{ (t1.length!==0||t2.length!==0||t3.length!==0)?<div className='btn' onClick={()=>{navigate("/confirm")}}>confirm your order</div> : ""    }
-      
+{/* { (t1.length!==0||t2.length!==0||t3.length!==0)?<div className='btn' onClick={()=>{navigate("/confirm")}}>confirm your order</div> : ""    }
+       */}
 
 
         </div>

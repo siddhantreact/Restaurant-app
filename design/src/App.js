@@ -42,7 +42,7 @@ function App() {
 
       <Route  exact path='/' element={<Login/>}/>
   
-      {/* <Route  exact path='/cart' element={<Cart/>}/> */}
+      <Route  exact path='/cart' element={<Cart/>}/>
 
       <Route  exact path='/address' element={<Address/>}/>
 
