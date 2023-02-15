@@ -2,40 +2,41 @@ import React from 'react'
 import "../Styles/Login.css"
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
+import { Pagination, Navigation } from "swiper";
 import "swiper/css";
-// import "swiper/css/pagination";
+import "swiper/css/pagination";
+
 
 import { auth, provider } from "../Firebase/Firebase"
 import { signInWithPopup } from 'firebase/auth';
-import { useNavigate} from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { Autoplay } from "swiper"
+
 
 
 
 function Login() {
 
-   const navigate = useNavigate()
+  const navigate = useNavigate()
 
-   
+
   function handlelogin() {
 
     signInWithPopup(auth, provider).then((response) => {
 
       console.log(response)
-     
-      navigate("/home")
-      
+
+      navigate("/main")
+
 
     }).catch((error) => {
       console.log(error)
     })
 
-
-
-
-
   }
 
+
+  
 
 
 
@@ -48,11 +49,19 @@ function Login() {
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
+        loop={true}
+
         pagination={{
           clickable: true,
-
+         
         }}
-        modules={[Pagination]}
+         
+         autoplay={{
+          delay:2500
+         }}
+
+
+        modules={[Pagination ,Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide> <img src='Image/3.jpeg' />  </SwiperSlide>
@@ -78,7 +87,7 @@ function Login() {
 
       </div>
 
-    </div>
+    </div >
   )
 }
 

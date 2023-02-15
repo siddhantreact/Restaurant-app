@@ -46,17 +46,27 @@ function Main() {
 
           return(
              
-             <div className='btn' onClick={()=>{
+             <button className='btn'   onClick={()=>{
 
                 dispatch(selectedTable(e))
 
-             }}>{e}</div>
+             }}>{e}</button>
 
           )
 
       })
       
       }
+
+// !!!! btn 
+
+
+
+
+
+
+
+
 
       <div className='btn' onClick={()=>{
           

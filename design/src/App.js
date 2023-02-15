@@ -14,6 +14,7 @@ import Protected from './Components/Protected';
 
 import Table from './Components/Table';
 import Main from './Components/Main';
+import Confirmation from './Components/Confirmation';
 
 
 
@@ -54,7 +55,8 @@ function App() {
 
       <Route  exact path='/main' element={<Main/>}/>
     
-
+      <Route  exact path='/confirm' element={<Confirmation/>}/>
+      
      </Routes>
 
 

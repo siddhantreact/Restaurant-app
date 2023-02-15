@@ -2,10 +2,10 @@ import React, { useContext, useEffect, useState } from 'react'
 import "../Styles/SearchBar.css"
 import { ContextTransfer } from '../App'
 import Data from '../Data/Data'
-
+import { useDispatch, useSelector } from 'react-redux'
 import { Search } from "@mui/icons-material"
 import { IconButton } from '@mui/material'
-
+import { useNavigate } from 'react-router-dom'
 function SearchBar() {
 
     const [search, setSeach] = useState("")
@@ -13,7 +13,27 @@ function SearchBar() {
 
     const { dish, setDish, setMeal, setListData } = useContext(ContextTransfer)
 
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
 
+    const t1 = useSelector((state)=>{
+      
+        return state.tables.t1
+  
+      })
+  
+      const t2 = useSelector((state)=>{
+        
+        return state.tables.t2
+  
+      })
+  
+      const t3 = useSelector((state)=>{
+        
+        return state.tables.t3
+  
+      })
+  
 
 
     // function handleData() {
@@ -99,7 +119,8 @@ function SearchBar() {
 
             } />
 
-
+{ (t1.length!==0||t2.length!==0||t3.length!==0)?<div className='btn' onClick={()=>{navigate("/confirm")}}>confirm your order</div> : ""    }
+      
 
 
         </div>
