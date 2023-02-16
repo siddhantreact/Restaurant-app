@@ -126,9 +126,9 @@ const data = createSlice({
       clearTable(state,action)
       {
 
-         state.t1.length=0
-         state.t2.length=0
-         state.t3.length=0
+          state.t1.length=0
+          state.t2.length=0
+          state.t3.length=0
 
       }
 

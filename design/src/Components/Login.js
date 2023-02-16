@@ -29,6 +29,8 @@ function Login() {
 
       console.log(response)
 
+      dispatch(addUser(response.user.displayName))
+
       navigate("/main")
 
 
@@ -41,14 +43,7 @@ function Login() {
 
   
 
-  useEffect(()=>{
-
-      const user = auth.currentUser
-        
-      dispatch(addUser(user))
-
-       
-  },[])
+  
 
 
 

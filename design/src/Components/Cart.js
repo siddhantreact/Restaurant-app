@@ -186,10 +186,10 @@ function Cart() {
 
         <button onClick={() => {
 
-          navigate("/address")
+          navigate("/confirm")
 
 
-        }}>Proceed</button>
+        }}>confirm</button>
 
       </div>
 

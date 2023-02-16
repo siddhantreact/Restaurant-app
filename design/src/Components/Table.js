@@ -7,6 +7,8 @@ function Table() {
   
   const dispatch = useDispatch()
 
+ 
+
   let t1Order = useSelector((state) => {
 
 
@@ -26,6 +28,8 @@ function Table() {
     return state.tables.t3 
   })
 
+
+  
 
 
   
@@ -113,9 +117,9 @@ function Table() {
 
       <button onClick={() => {
 
-           dispatch(clearTable)
+           dispatch(clearTable())
 
-           console.log("clicked")
+          
 
       }}>clear table</button>
 
