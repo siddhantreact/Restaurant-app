@@ -112,7 +112,6 @@ function Table() {
 
 
 
-/////!!!!!clearTable
 
 
       <button onClick={() => {

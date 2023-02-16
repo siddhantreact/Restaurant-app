@@ -64,17 +64,17 @@ function Main() {
 
       {/* ==============================================> */}
 
-   {/* !!!! persist */}
+  
 
    
 
 
 
-      <button className='btn_1 ' onClick={() => {
+      <button className='btn_1 '  disabled={(t1.length>0)? true : false}    onClick={() => {
 
         const btn = document.querySelector(".btn_1")
        
-        btn.setAttribute("disabled" , true)
+         btn.setAttribute("disabled" , true)
        
         dispatch(selectedTable(btn.innerHTML))
 
@@ -85,7 +85,7 @@ function Main() {
       </button>
 
 
-      <button className='btn_2 '  onClick={() => {
+      <button className='btn_2 '    disabled={(t2.length>0)? true : false}     onClick={() => {
 
         const btn = document.querySelector(".btn_2")
 
@@ -98,11 +98,11 @@ function Main() {
       </button>
 
 
-      <button className='btn_3 ' onClick={() => {
+      <button className='btn_3 '    disabled={(t3.length>0)? true : false}      onClick={() => {
 
         const btn = document.querySelector(".btn_3")
 
-        btn.setAttribute("disabled" , true)
+         btn.setAttribute("disabled" , true)
 
         dispatch(selectedTable(btn.innerHTML))
 
